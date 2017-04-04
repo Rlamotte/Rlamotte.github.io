@@ -6,7 +6,7 @@ function connect() {
     navigator.bluetooth.requestDevice(
         {
             filters: [{
-            name: 'KDC'
+            namePrefix: 'KDC'
           }],
           optionalServices: ['battery_service']
         })
