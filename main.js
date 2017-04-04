@@ -5,7 +5,10 @@ function connect() {
     console.log('Requesting Bluetooth Device...');
     navigator.bluetooth.requestDevice(
         {
-            acceptAllDevices: true
+            filters: [{
+            name: 'KDC'
+          }],
+          optionalServices: ['battery_service']
         })
         .then(device => {
             console.log('> Found ' + device.name);
